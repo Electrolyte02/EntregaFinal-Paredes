@@ -1,42 +1,77 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+nav{
+  background-color: #6c757d;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cardProducto{
+  width: 20rem;
+  height: 28rem;
+  margin: 1.25em;
+  padding: 1.25em;
+  border: solid black;
 }
 
-.card {
-  padding: 2em;
+.cardProductoImg{
+  max-width: 70%;
+  max-height: 60%;
+  align-self: center;
 }
 
-.read-the-docs {
-  color: #888;
+.cardProductoBtn{
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+.detailContainer{
+  margin: 5rem;
+  padding: 5rem;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px;
+  border-color: black;
+}
+
+.detailImg{
+  width: 40%;
+}
+
+.detailTextContainer{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.detailTitle{
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.detailText{
+  margin:0.5rem;
+  padding: 0.5rem;
+}
+
+.detailButtonContainer{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detailButton{
+  width: 5rem;
+  height: 5rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
 }

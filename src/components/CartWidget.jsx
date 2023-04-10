@@ -1,8 +1,9 @@
-function CartWidget(){
+function CartWidget(props){
+  const contCarrito = props.contCarrito;
     return(
       <div>
       <img width={50} height={50}  src='./src/assets/cart-shopping-solid.svg'></img>
-      <p>6</p>
+      <p>{contCarrito}</p>
       </div>
     )
   }
