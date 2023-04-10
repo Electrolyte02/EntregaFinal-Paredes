@@ -10,7 +10,7 @@ function ItemDetailContainer() {
     const response = await fetch("https://fakestoreapi.com/products").then((response) => response.json());
     setProductos(response);
   };
-
+  
   useEffect(() => {
     getApiData();
   }, []);
