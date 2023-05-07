@@ -23,7 +23,7 @@ function NavBar({categories}){
         <Nav className='navbar-nav'>
         {categorias.map(item => <Link className="nav-link" key={item.id} to={`/categoria/${item.categoria}`}>{item.name}</Link>  )}
         </Nav>
-        <Link to={'/cart'}><CartWidget contCarrito="3"/></Link>
+        <Link to={'/cart'}><CartWidget/></Link>
         </Container>
         </Navbar>
     )
