@@ -1,26 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import {collection, getDocs, getFirestore} from 'firebase/firestore'
 
 function ItemDetailContainer() {
   const [productos, setProductos] = useState([]);
-  const { id } = useParams();
-
-  const getApiData = async () => {
-    const response = await fetch("https://fakestoreapi.com/products").then((response) => response.json());
-    setProductos(response);
-  };
   
   useEffect(() => {
-    getApiData();
-  }, []);
-
-  const selectedItem = productos.find((producto) => producto.id === parseInt(id));
+    const db = getFirestore()
+    const queryCollection = collection(db,'productos')
+    getDocs(queryCollection)
+    .then(resp => setProductos(resp.docs.map(producto=>({id:producto.id, ...producto.data()}))))
+  }, [])
+  
+  const { id } = useParams();
+  const selectedItem = productos.find((producto) => producto.id === (id));
+  console.log(id);
 
   return (
     <div className="containerPruebaDetail">
       {selectedItem && (
-        <ItemDetail image={selectedItem.image} title={selectedItem.title} description={selectedItem.description} />
+        <ItemDetail producto={selectedItem}/>
       )}
     </div>
   );

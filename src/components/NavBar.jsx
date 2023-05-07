@@ -2,20 +2,28 @@ import CartWidget from "./CartWidget.jsx"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { categorias } from "../utils/categorias.jsx";
 
-function NavBar(){
+function NavBar({categories}){
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+  const hombre= "hombre";
+  const mujer="mujer";
+  const unisex="unisex";
     return(
       <Navbar>
         <Container>
         <Navbar.Brand>
-        <img src='./src/assets/logoipsum-241.svg'></img>
+          <Link to={'/'}><img src='./src/assets/logoipsum-241.svg'></img></Link>
         </Navbar.Brand>
         <Nav className='navbar-nav'>
-          <Nav.Link href=''>Hombre</Nav.Link>
-          <Nav.Link href=''>Mujer</Nav.Link>
-          <Nav.Link href=''>Unisex</Nav.Link>
+        {categorias.map(item => <Link className="nav-link" key={item.id} to={`/categoria/${item.categoria}`}>{item.name}</Link>  )}
         </Nav>
-        <CartWidget contCarrito="3"/>
+        <Link to={'/cart'}><CartWidget contCarrito="3"/></Link>
         </Container>
         </Navbar>
     )

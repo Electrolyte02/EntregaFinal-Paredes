@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom';
 
 function Item(props){
     return(
-        <Card className='cardProducto'>
+        <Card className='cardProducto' key={props.id}>
         <Card.Body className="title">{props.title}</Card.Body>
-        <Card.Img src={props.image} className='cardProductoImg'></Card.Img>
+        <Card.Img src={props.imagen} className='cardProductoImg'></Card.Img>
         <Card.Footer>
         <Link to={`/item/${props.id}`}>
         <Button className='cardProductoBtn'>Detalles</Button>

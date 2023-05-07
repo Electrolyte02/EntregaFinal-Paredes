@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+body, html {
+  font-family: 'Open Sans', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +13,19 @@
 }
 
 nav{
-  background-color: #6c757d;
+  background-color: #7746FA;
 }
+
+.nav-link {
+  padding: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
 
 .cardContainer{
   display: flex;
@@ -16,13 +33,19 @@ nav{
   justify-content: space-evenly;
 }
 
-.cardProducto{
+.cardProducto {
   width: 20rem;
   height: 28rem;
   margin: 1.25em;
   padding: 1.25em;
   border: solid black;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
 }
+
 
 .cardProductoImg{
   max-width: 70%;
@@ -33,6 +56,8 @@ nav{
 .cardProductoBtn{
   padding: 0.2rem;
   margin: 0.2rem;
+  background-color: #5C4DFA;
+  border-color: black;
 }
 
 .detailContainer{
@@ -49,29 +74,81 @@ nav{
 }
 
 .detailTextContainer{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex: 1;
+  margin-left: 4rem;
+  text-align: center;
 }
 
 .detailTitle{
-  margin: 0.5rem;
-  padding: 0.5rem;
+  font-size: 2rem;
+  margin: 0;
 }
 
 .detailText{
-  margin:0.5rem;
-  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.detailPrice {
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 .detailButtonContainer{
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .detailButton{
-  width: 5rem;
-  height: 5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 0.2rem;
   margin: 0.2rem;
+  background-color: #5C4DFA;
+  border: black;
+}
+
+.detailAddButton{
+  width: 6rem;
+  height: 3rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+  background-color: #5C4DFA;
+  border: black;
+}
+
+.detailCountContainer{
+  display: flex;
+}
+
+.detailLink{
+  text-decoration: none;
+  color: white;
+  background-color: #5C4DFA;
+  border: black;
+}
+
+.cartContainer{
+  text-align: center;
+}
+
+.cartContainer--empty{
+  margin: 5rem;
+  padding: 5rem;
+}
+
+.cartContainerText--empty{
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
+.cartContainerButton--empty{
+  background-color: #5C4DFA;
+  border: black;
+}
+
+.cartContainerProducts{
+  padding: 1rem;
+  margin: 1rem;
 }
