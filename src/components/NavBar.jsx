@@ -18,7 +18,7 @@ function NavBar({categories}){
       <Navbar>
         <Container>
         <Navbar.Brand>
-          <Link to={'/'}><img src='./src/assets/logoipsum-241.svg'></img></Link>
+          <Link to={'/'}><img src='https://img.logoipsum.com/239.svg'></img></Link>
         </Navbar.Brand>
         <Nav className='navbar-nav'>
         {categorias.map(item => <Link className="nav-link" key={item.id} to={`/categoria/${item.categoria}`}>{item.name}</Link>  )}
